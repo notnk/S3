@@ -19,7 +19,7 @@ void main()
 	{
 		char text[200],str[20], new_text[200]; 
       		int i=0,j=0,found=0,k,n=0,c=0;  
-      		printf("\n Enter the main text: "); 
+      		printf("\n Enter the main text: "); //without space ffs
       		scanf("%s",text); 
       		printf("\n Enter the string to be deleted: "); 
       		scanf("%s",str);  
