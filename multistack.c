@@ -33,7 +33,6 @@ void pop(int x)
 		else
 		{	
 			printf("\nPoped item is:%d",stack[t1]);
-			stack[t1]=stack[t1+1];
 			t1--;
 		}
 	}
@@ -44,7 +43,6 @@ void pop(int x)
 		else
 		{	
 			printf("\nPoped item is:%d",stack[t2]);
-			stack[t2]=stack[t2+1];
 			t2--;
 		}
 	}
