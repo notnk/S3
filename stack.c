@@ -17,7 +17,6 @@ void pop()
 	else
 	{	
 		printf("\nPoped item is:%d",stack[top]);
-		stack[top]=stack[top+1];
 		top--;
 	}
 }
