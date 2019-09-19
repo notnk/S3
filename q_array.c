@@ -31,8 +31,7 @@ void main()
 }		
 void lq()
 {	
-	int ch;
-	char ch1;
+	int ch, ch1;
 	printf("Enter the size of the Queue:");
 	scanf("%d",&n1);
 	do
@@ -49,14 +48,13 @@ void lq()
 				for(int i=front1; i<=rear1; i++)
 					printf("%d\n",q[i]);
 		}
-		printf("Enter 'y' to continue.");
-		scanf("%c",&ch1);
-	}while(ch1=='y');
+		printf("Enter '0' to continue.");
+		scanf("%d",&ch1);
+	}while(ch1=='0');
 }
 void cq()
 {	
-	int ch;
-	char ch1;
+	int ch,ch1;
 	printf("Enter the size of the Queue:");
 	scanf("%d",&n2);
 	do
@@ -73,14 +71,13 @@ void cq()
 				for(int i=front2; i<=rear2; i++)
 					printf("%d\n",q[i]);
 		}
-		printf("Enter 'y' to continue.");
-		scanf("%c",&ch1);
-	}while(ch1=='y');
+		printf("Enter '0' to continue.");
+		scanf("%d",&ch1);
+	}while(ch1=='0');
 }
 void dq()
 {	
-	int ch;
-	char ch1;
+	int ch,ch1;
 	printf("Enter the size of the Queue:");
 	scanf("%d",&n3);
 	do
@@ -97,9 +94,9 @@ void dq()
 				for(int i=front3; i<=rear3; i++)
 					printf("%d\n",q[i]);
 		}
-		printf("Enter 'y' to continue.");
-		scanf("%c",&ch1);
-	}while(ch1=='y');
+		printf("Enter '0' to continue.");
+		scanf("%d",&ch1);
+	}while(ch1=='0');
 }
 void enq()
 {
