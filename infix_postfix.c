@@ -120,37 +120,31 @@ void post()
 		}
 	}
 }
-/*void eval()
-{
-	int i=0,r;
-	char op1,op2;
-	while(x[i]!='#')
-	{
-		item=s[i];
-		if(no(item))
-			push(item);
-		else
-		{
-			op1=pop();
-			op2=pop();
-			r=e(op1,op2,item);
-			push(r);
-		}
-		i++;
-	}
-	r=pop();
-	printf("%d",r);		
-}*/
+int eval_postfix(char *postfix) {
+ char ch;
+ int i = 0, op1, op2;
+ while((ch = postfix[i++]) != 0) {
+ if(isdigit(ch)) 
+ push(ch-'0'); /* Push the operand */
+ else { /* Operator,pop two operands */
+ op2 = pop();
+ op1 = pop();
+ switch(ch) {
+ case '+' : push(op1+op2); 
+ break;
+ case '-' : push(op1-op2); 
+ break;
+ case '*' : push(op1*op2);
+ break;
+ case '/' : push(op1/op2);
+ break;
+ }
+ }
+ }
+ return s[top];
+}
 void main()
-{	
-	/*int a;
-	scanf("%d",&a);
-	if(a==1)
-		post();
-	else
-	{
+{
 		post();
 		eval();
-	}*/
-	post();
 }
