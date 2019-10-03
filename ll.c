@@ -1,10 +1,10 @@
 #include<stdio.h>
-int item
+int item;
 struct node
 {
 	int data;
 	struct node *next;
-}list,*temp,*head;
+}*list,*temp,*head;
 struct node *insend()
 {
 	printf("Enter the item:");
@@ -47,7 +47,7 @@ struct node *insbeg()
 		return head;
 	}
 }
-struct node *insspe()
+void insspe()
 {
 	int key;
 	printf("Enter the item and key:");
@@ -72,7 +72,7 @@ void main()
 	int a;
 	while(1)
 	{
-		printf("1.Insertion at beg\n2.Insertion at end\n3.Insertion after a node\n4.Deletion at beg\n5.Deletion at end\n6.Deletion after a node\n7.Display\n8.Exit\nEnter the choice:");
+		printf("\n\n1.Insertion at beg\n2.Insertion at end\n3.Insertion after a node\n4.Deletion at beg\n5.Deletion at end\n6.Deletion after a node\n7.Display\n8.Exit\nEnter the choice:");
 		scanf("%d",&a);
 		switch(a)
 		{
@@ -89,9 +89,10 @@ void main()
 			case 6:	delspe();
 				break;*/
 			case 8:	exit(0);
-			case 7:	while(list!=NULL)
+			case 7:	printf("\nElements are:\n");
+				while(list!=NULL)
 				{
-					printf("%d",list->data);
+					printf("\n%d",list->data);
 					list=list->next;
 				}		
 		}
