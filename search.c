@@ -15,7 +15,7 @@ void bsearch(int a[],int n,int k)
 {
 	int f=0,l=0,mid,u=n-1;
 	mid=(l+u)/2;
-	while(l<u)
+	do
 	{
 		if(k==a[mid])
 		{
@@ -26,7 +26,7 @@ void bsearch(int a[],int n,int k)
 			l=mid+1;
 		else
 			u=mid-1;
-	}
+	}while(l>=u);
 	if(f==0)
 		printf("Element not found!!");
 }
@@ -38,12 +38,14 @@ void main()
 	printf("Enter the elements of the array");
 	for(int i=0;i<n;i++)
 		scanf("%d",&a[i]);
-	printf("\n1.Linear Search\n2.Binary Search(Should be sorted array)\nEnter your choice:");
-	scanf("%d",&c);
 	printf("Enter the element to be searched:");
 	scanf("%d",&k);
-	if(c==1)
-		lsearch(a,n,k);
-	else if(c==1)
-		bsearch(a,n,k);
+	printf("\n1.Linear Search\n2.Binary Search(Should be sorted array)\nEnter your choice:");
+	scanf("%d",&c);
+	switch(c)
+	{
+		case 1:	lsearch(a,n,k);
+			break;
+		case 2:	bsearch(a,n,k);
+	}
 }
