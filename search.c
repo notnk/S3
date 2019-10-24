@@ -13,22 +13,32 @@ void lsearch(int a[],int n,int k)
 }
 void bsearch(int a[],int n,int k)
 {
-	int f=0,l=0,mid,u=n-1;
-	mid=(l+u)/2;
-	do
+	int i,first, last, middle;
+	first = 0;
+	last = n-1;
+	middle = (first+last)/2;
+	while (first <= last)
 	{
-		if(k==a[mid])
+		if(a [middle] < k)
 		{
-			printf("Found at postion %d",mid);
-			f=1;
+			first = middle + 1;
+
 		}
-		else if(k>mid)
-			l=mid+1;
+		else if(a[middle] == k)
+		{
+			printf("%d found at location %d\n", k, middle+1);
+			break;
+		}
 		else
-			u=mid-1;
-	}while(l>=u);
-	if(f==0)
-		printf("Element not found!!");
+		{
+			 last = middle - 1;
+		}
+		middle = (first + last)/2;
+	}
+	if(first > last)
+	{
+		printf("Not found! %d is not present in the list.",k);
+	}
 }
 void main()
 {
