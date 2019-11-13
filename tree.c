@@ -7,36 +7,39 @@ struct tree
 }*temp;
 void create(struct tree *t)
 {
-	char ch;
+	char ch='y';
 	int item;
 	struct tree *top;
+	temp=(struct tree*)malloc(sizeof(struct tree));
 	if(t!=NULL)
 	{
 		printf("Any left child(l):");
-		scanf("%s",ch);
+		scanf("%c",&ch);
 		if(ch=='y')
 		{
 			printf("Enter the value(l):");
 			scanf("%d",&item);
-			temp=(struct tree*)malloc(sizeof(struct tree));
+			//temp=(struct tree*)malloc(sizeof(struct tree));
 			temp->data=item;
 			temp->lchild=NULL;
 			temp->rchild=NULL;
 			t->lchild=temp;
-			create(temp);
+			//create(temp);
 		}
+		else
+			printf("left failed");
 		printf("Any right child(r):");
 		scanf("%c",&ch);
 		if(ch=='y')
 		{
 			printf("Enter the value(r):");
 			scanf("%d",&item);
-			temp=(struct tree*)malloc(sizeof(struct tree));
+			//temp=(struct tree*)malloc(sizeof(struct tree));
 			temp->data=item;
 			temp->lchild=NULL;
 			temp->rchild=NULL;
 			t->rchild=temp;
-			create(temp);
+			//create(temp);
 		}
 	}
 }
@@ -89,6 +92,7 @@ void main()
 {
 	int ch,k,item;
 	struct tree *t;
+	t=(struct tree*)malloc(sizeof(struct tree));
 	printf("Enter the root element:");
 	scanf("%d",&item);
 	t->data=item;
