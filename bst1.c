@@ -42,7 +42,7 @@ void mirror(struct node* node)
   } 
 }  
 
-void find(int item,struct node **par,struct node **loc)
+int find(int item,struct node **par,struct node **loc)
 {
 	struct node *ptr,*ptrsave;
 
