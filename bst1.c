@@ -50,13 +50,13 @@ int find(int item,struct node **par,struct node **loc)
 	{
 		*loc=NULL;
 		*par=NULL;
-		return;
+		return 0;
 	}
 	if(item==root->info) 
 	{
 		*loc=root;
 		*par=NULL;
-		return;
+		return 0;
 	}
 	
 	if(item<root->info)
@@ -70,7 +70,7 @@ int find(int item,struct node **par,struct node **loc)
 		if(item==ptr->info)
 		{       *loc=ptr;
 			*par=ptrsave;
-			return;
+			return 0;
 		}
 		ptrsave=ptr;
 		if(item<ptr->info)
